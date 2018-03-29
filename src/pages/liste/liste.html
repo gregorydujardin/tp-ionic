@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>liste</ion-title>
+    <ion-title>Liste d'offres</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -15,6 +15,6 @@
 
 <ion-content padding>
   <ion-list>
-    <ion-item *ngFor="let job of jobs" >{{ job }}</ion-item>
+    <ion-item *ngFor="let job of jobs" >{{ job.name}}</ion-item>
   </ion-list>
 </ion-content>
