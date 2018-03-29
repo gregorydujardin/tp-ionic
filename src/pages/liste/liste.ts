@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-import { HttpClient } from '@angular/common/http';
 import { LoadingController } from 'ionic-angular';
+import { ApiProvider } from '../../providers/api/api';
 
 /**
  * Generated class for the ListePage page.
@@ -18,7 +18,7 @@ export class ListePage {
 
   jobs;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public httpClient: HttpClient, public loadingCtrl: LoadingController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public apiProvider: ApiProvider, public loadingCtrl: LoadingController) {
   }
 
   fetchJobs() {
@@ -26,10 +26,12 @@ export class ListePage {
       content: "Chargement en cours..."
     });
     loading.present();
-    this.httpClient.get('https://mobile-api-jobs.herokuapp.com/api/jobs').subscribe(data => {
+    this.apiProvider.getJobs().then(jobs => {
+      this.jobs = jobs;
       loading.dismiss();
-      this.jobs = data
-    })
+    }).catch(error => {
+      console.error(error);
+    });
   }
 
   ionViewDidLoad() {
