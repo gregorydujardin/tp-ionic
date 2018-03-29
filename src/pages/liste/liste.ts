@@ -16,10 +16,9 @@ import { LoadingController } from 'ionic-angular';
 })
 export class ListePage {
 
-  jobs
+  jobs;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public httpClient: HttpClient, public loadingCtrl: LoadingController) {
-    this.fetchJobs();
   }
 
   fetchJobs() {
@@ -34,7 +33,7 @@ export class ListePage {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad ListePage');
+    this.fetchJobs();
   }
 
 }
