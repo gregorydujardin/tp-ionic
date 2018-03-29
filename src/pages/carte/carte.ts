@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 
 /**
  * Generated class for the CartePage page.
@@ -8,12 +8,14 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
  * Ionic pages and navigation.
  */
 
-@IonicPage()
 @Component({
   selector: 'page-carte',
   templateUrl: 'carte.html',
 })
 export class CartePage {
+
+  lat: number = 51.678418;
+  lng: number = 7.809007;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
