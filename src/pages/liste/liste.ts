@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 
 /**
  * Generated class for the ListePage page.
@@ -8,14 +8,21 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
  * Ionic pages and navigation.
  */
 
-@IonicPage()
 @Component({
   selector: 'page-liste',
   templateUrl: 'liste.html',
 })
 export class ListePage {
 
+  jobs = [
+    'Job 1',
+    'Job 2',
+    'Job 3',
+    'Job 4',
+  ]
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+
   }
 
   ionViewDidLoad() {
